@@ -1,0 +1,94 @@
+    input:focus::-webkit-input-placeholder {
+    color:lightgray;}
+    
+    div:focus, input:focus{
+    outline: 0;
+    border-radius: 10px;
+    border:1px solid blue;
+    box-shadow: 0 0 10px #719ECE;
+    
+}
+    
+body
+    {
+        background:linear-gradient(#de6262,#ffb88c);
+        background:linear-gradient(#cc2b5e,#753a88);
+        
+    }
+
+
+input
+    {
+                  
+                height: 15%;
+                margin-top: 20px;
+                width: 80%;
+                border-radius: 10px;
+                border: blue;
+                box-shadow: 0 0 10px #719ECE;  
+                font-size: medium;              
+    }
+
+#todo-input{
+    height: 20px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+     
+#login
+    {
+                background-color:#4a78db;
+                font:bold;
+                font-size:x-large;
+                color:white;
+
+    }
+#logout{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+  height: 25px;
+  width: 100px;
+
+}
+#login:hover
+    {
+        width: 82%;
+        height: 17%;
+    }
+
+
+#create-new-account
+    {
+            width: 55%;
+            font:bold;
+            font-size:larger;
+            color:white;
+            background-color:rgb(4, 167, 26);
+            margin-top: 10px;
+    }
+#create-new-account:hover
+    {
+        width: 57%;
+        height: 17%;
+    }
+    
+.container
+    {
+            position: absolute;
+            text-align:center;
+               
+            width: 400px;
+            height: 320px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin:auto;                
+            border-radius: 10px;
+            background-color:white;
+    }
+       
