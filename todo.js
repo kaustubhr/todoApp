@@ -24,18 +24,48 @@ function showTodo(){
         if(user){
 
     var userID = firebase.auth().currentUser.uid;
-    
-    //document.getElementById("tasks-list").value = ''; 
-    
-    var table = document.getElementById("tasks-list");
-    
-    
     firebase.database().ref('users/'+userID).once('value').then(function(snapshot){
-    snapshot.forEach(function(childSnapshot){
-    var row = table.insertRow(-1);
-    var cell = row.insertCell(0);
-    cell.innerHTML = childSnapshot.val().Task;                         
+        snapshot.forEach(function(childSnapshot){
+     
     
+    //var table = document.getElementById("tasks-list");
+    
+    
+   
+    /*var row = table.insertRow(-1);
+    var cell = row.insertCell(0);
+    cell.innerHTML = childSnapshot.val().Task;  
+    */
+   //todo DIV
+
+   let todoList = document.querySelector(".todo-list");
+   todoList.addEventListener('click',deleteCheck);
+   let todoDiv = document.createElement('div');
+   todoDiv.classList.add("todo");
+   
+   let newTodo = document.createElement('li');
+   newTodo.classList.add('todo-item');
+   
+   newTodo.innerHTML=childSnapshot.val().Task;
+
+   todoDiv.appendChild(newTodo);
+   //checked button
+   let completedButton = document.createElement('button');
+   completedButton.innerHTML = '<i class="fas fa-check"></i>';
+   completedButton.classList.add("complete-btn");
+   todoDiv.appendChild(completedButton);
+
+   //trash button
+   let trashButton = document.createElement('button');
+   trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+   trashButton.classList.add("trash-btn");
+   todoDiv.appendChild(trashButton);
+
+   //append this todoDiv to ul todo-list
+   todoList.appendChild(todoDiv);
+
+
+   
 });
                       
     });
@@ -76,14 +106,66 @@ let addTaskIcon = document.querySelector('.addTask');
 function showAddedRow(){
     
     var userID = firebase.auth().currentUser.uid;
-    var table = document.getElementById("tasks-list");
+    //var table = document.getElementById("tasks-list");
     
 
-    firebase.database().ref('users/'+userID).once('child_added').then(function(snapshot){
-            
-        var row = table.insertRow(-1);
-        var cell = row.insertCell(0);
-        cell.innerHTML = snapshot.val().Task;    
-    });
+   
+    //todo DIV
+   const todoList = document.querySelector(".todo-list");
+   todoList.addEventListener('click',deleteCheck);
+   const todoDiv = document.createElement('div');
+   todoDiv.classList.add("todo");
+   
+   const newTodo = document.createElement('li');
+   newTodo.classList.add('todo-item');
+   firebase.database().ref('users/'+userID).once('child_added').then(function(snapshot){
+    newTodo.innerHTML=snapshot.val().Task;       
+});
+   
+   todoDiv.appendChild(newTodo);
+   //checked button
+   const completedButton = document.createElement('button');
+   completedButton.innerHTML = '<i class="fas fa-check"></i>';
+   completedButton.classList.add("complete-btn");
+   todoDiv.appendChild(completedButton);
+
+   //trash button
+   const trashButton = document.createElement('button');
+   trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+   trashButton.classList.add("trash-btn");
+   todoDiv.appendChild(trashButton);
+
+   //append this todoDiv to ul todo-list
+   todoList.appendChild(todoDiv);
 }
 
+function deleteCheck(e){
+    let item = e.target;
+    
+    //delete todo
+    if(item.classList[0]=="trash-btn"){
+        let rem = item.parentElement;
+        let taskToDel = rem.innerText;
+        firebase.auth().onAuthStateChanged(function(user) {
+            if(user)
+            {
+                
+                var userID = firebase.auth().currentUser.uid;
+                console.log(taskToDel);
+               firebase.database().ref('users/'+userID).orderByChild('Task').equalTo(taskToDel).
+                on('value',function(snapshot){
+                    console.log(snapshot.val());
+                    snapshot.forEach(function(child){
+                        child.ref.remove();
+                        
+                    });
+                  
+                });  
+                   
+            }
+            
+        }); 
+        rem.remove();
+
+    }
+}

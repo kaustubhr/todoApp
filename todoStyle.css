@@ -1,46 +1,37 @@
+html{
+    height: 100%;
+}
 .addTask{
-    color:rgb(2, 211, 2);
-    background:white;
+    background:rgb(2, 211, 2);
+    color: white;
+    
     
     cursor: pointer;
     border: none;
     
     transition:all 0.3s ease;
     box-shadow: 0 0 10px #0e75e2;
+    
 
 }
 
     
 
 .addTask:hover{
-    
-    background:rgb(2, 211, 2);
-    color: white;
-    
-}
-table{
-    width: 100%;
-}
-tr{
-     color:black;
-     background-color: white;
-     border: 1px solid black;
-     
-     
-    
+    color:rgb(2, 211, 2);
+    background:white;
     
 }
-td{
-    font-family:'Times New Roman', Times, serif;
-    padding-bottom: 1%;
 
-}
+
 
 body{
     height: 100vh;
     
+    
     background-image:linear-gradient(#cc2b5e,#753a88);
-    min-height: 100vh;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    
     
 
 }
@@ -53,7 +44,7 @@ input{
     
     /*box-shadow: 0 0 10px #719ECE;*/
     cursor: pointer;
-    width:30%;
+    width:35%;
     
 }
 
@@ -75,3 +66,49 @@ input:focus{
     font-weight: bold;
     box-shadow: 0 0 10px #0500fa;
 } 
+
+.todo-list{
+    min-width: 35%;
+    
+    list-style: none;
+}
+
+.todo{
+    margin:0.75rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.todo li{
+    flex: 1;
+    
+}
+
+.trash-btn,.complete-btn{
+    border:none;
+    padding:0.4rem;
+    cursor: pointer;
+    
+    box-shadow: 0 0 10px #d4380d;
+    
+    color: white;
+    background: #ff6f47;
+}
+.trash-btn:hover,.complete-btn:hover{
+    background: white;
+    color: #ff6f47;
+    
+
+}
+.complete-btn{
+    background: rgb(2, 211, 2);
+    box-shadow: 0 0 10px #0e75e2;
+}
+.fa-trash,.fa-check{
+    pointer-events: none;
+}
