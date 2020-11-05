@@ -3,24 +3,6 @@
 
 
 
-/*function ins(){
-    
-    firebase.auth().onAuthStateChanged(function(user) {
-        if(user)
-        {
-            var todo = document.getElementById("todo-input").value;
-            if(todo==''){return;}
-            var userID = firebase.auth().currentUser.uid;
-            firebase.database().ref('users/'+userID).push({Task: todo});  
-            document.getElementById("todo-input").value='';   
-            //showAddedRow();      
-        }
-        else{
-            window.location.href = '/login.html';
-        }
-    });    
-}*/
-
 function lOut(){
     
     firebase.auth().signOut();
