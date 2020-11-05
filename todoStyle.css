@@ -11,6 +11,9 @@ html{
     
     transition:all 0.3s ease;
     box-shadow: 0 0 10px #0e75e2;
+    height: 30%;
+    width: 5%;
+    background-size: 75%;
     
 
 }
@@ -29,7 +32,8 @@ body{
     height: 100vh;
     
     
-    background-image:linear-gradient(#cc2b5e,#753a88);
+    background:linear-gradient(120deg,#b5e1ec,#3fa4e7);
+    background:linear-gradient(120deg,#06ced4,#03a78b);
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     
     
@@ -45,6 +49,7 @@ input{
     /*box-shadow: 0 0 10px #719ECE;*/
     cursor: pointer;
     width:35%;
+    height: 30%;
     
 }
 
@@ -60,6 +65,8 @@ input:focus{
     border-radius: 10px; 
     width: 130%;
     font-weight: bold;
+    height: 50%;
+    
 }   
 #logout:hover{
     color: rgba(255, 0, 0, 0.692);
@@ -99,14 +106,20 @@ input:focus{
     color: white;
     background: #ff6f47;
 }
-.trash-btn:hover,.complete-btn:hover{
+.complete-btn:hover{
     background: white;
-    color: #ff6f47;
+    /*color: #ff6f47;*/
+    color: rgb(2, 211, 2)
     
 
 }
+.trash-btn:hover{
+    color:black;
+    background: white;
+}
 .complete-btn{
     background: rgb(2, 211, 2);
+    color: white;
     box-shadow: 0 0 10px #0e75e2;
 }
 .fa-trash,.fa-check{

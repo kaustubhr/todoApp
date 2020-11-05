@@ -1,7 +1,11 @@
-    input:focus::-webkit-input-placeholder {
+html{
+    height: 100vh;
+    height: 100%;
+}
+input:focus::-webkit-input-placeholder {
     color:lightgray;}
     
-    div:focus, input:focus{
+    input:focus{
     outline: 0;
     border-radius: 10px;
     border:1px solid blue;
@@ -11,9 +15,13 @@
     
 body
     {
-        min-height: 100vh;
-        background:linear-gradient(#de6262,#ffb88c);
-        background:linear-gradient(#cc2b5e,#753a88);
+        
+        max-height: 90vh;
+        max-height: 90%;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        background:linear-gradient(120deg,#ff7e5f,#feb47b);
+        background:linear-gradient(120deg,#06ced4,#03a78b);
+       /* background:linear-gradient(#cc2b5e,#753a88);*/
         
     }
 
@@ -21,69 +29,73 @@ body
 input
     {
                   
-                height: 15%;
-                margin-top: 20px;
-                width: 80%;
+                height: 35%;
+                width: 50%;
                 border-radius: 10px;
                 border: blue;
                 box-shadow: 0 0 10px #719ECE;  
-                font-size: medium;              
+                           
     }
 
-#todo-input{
-    height: 20px;
-    width: 50%;
-    border-radius: 10px;
-}
 
      
 #login
     {
                 background-color:#4a78db;
                 font:bold;
-                font-size:x-large;
+                font-size:1.5em;
                 color:white;
+                vertical-align: center;
+                cursor: pointer;
+                
 
     }
-#logout{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    
-    transform: translate(-50%, -50%);
-  height: 25px;
-  width: 100px;
 
-}
 #login:hover
     {
-        width: 82%;
-        height: 17%;
+        width: 52%;
+        height: 37%;
     }
-
 
 #create-new-account
     {
-            width: 55%;
+            height: 35%;
+            width: 35%;
             font:bold;
-            font-size:larger;
+            border-radius: 10px;
             color:white;
             background-color:rgb(4, 167, 26);
-            margin-top: 10px;
+            cursor: pointer;
+            
+            
     }
-#create-new-account:hover
+
+    #create-new-account:hover
     {
-        width: 57%;
-        height: 17%;
+        height: 37%;
+        width:37%
+        
     }
-    
+
+    header{
+        text-align: center;
+        color: white;
+        font-size:4em;
+        font-weight: bold;
+        
+    }
+
+    hr{
+        padding-top:2%;
+    }
+    /*    
 .container
     {
             position: absolute;
             text-align:center;
                
-            width: 400px;
-            height: 320px;
+            width: 50%;
+            height: 40%;
             top: 0;
             bottom: 0;
             left: 0;
@@ -92,4 +104,4 @@ input
             border-radius: 10px;
             background-color:white;
     }
-       
+*/
