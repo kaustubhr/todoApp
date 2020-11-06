@@ -110,6 +110,7 @@ input
     #create-new-account{
         width: 50%;
         height:35%;
+        font-size:1em;
     }
     input{
         width:25vh;
@@ -122,6 +123,7 @@ input
     {
         font-size:3vh;            
     }
+
     
     
 }
