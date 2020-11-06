@@ -107,14 +107,23 @@ input
     #login {
          font-size: 1em;
     }
+    #login:hover{
+        width:55%;
+
+    }
     #create-new-account{
         width: 50%;
         height:35%;
         font-size:1em;
     }
+    #create-new-account:hover{
+        height:37%;
+        width:52%;
+    }
     input{
         width:25vh;
     }
+    
     #login-container{
         width:75vh;
         height: 20vh;

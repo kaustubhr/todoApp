@@ -11,16 +11,14 @@ html{
     
     transition:all 0.3s ease;
     box-shadow: 0 0 10px #0e75e2;
-    width:15vh;
-    height:10vh;
+    width:5vw;
+    height:5vw;
     
 
     
 
 }
-#add{
-    background-size: 200%;
-}
+
     
 
 .addTask:hover{
@@ -29,14 +27,30 @@ html{
     
 }
 #todo-input{
-    width: 50vh;
-    height: 10vh;
-    font-size:5vh;
+    width: 40vw;
+    height: 5vw;
+    font-size:2.5vw;
+    margin-left:10vw;
 }
 
-.todo-list{
-    margin-right:20vh;
-}
+
+#logout{
+    border-radius: 10px; 
+    
+    font-weight: bold;
+    font-size: 1.3vw;
+    transition:all 0.3s ease;
+    height:4vw;
+    width:8vw;
+    
+}   
+#logout:hover{
+    color: rgb(255, 0, 0, 0.692);
+    font-weight: bold;
+    box-shadow: 0 0 10px #0500fa;
+} 
+
+
 body{
     height:100vh;
     
@@ -59,8 +73,7 @@ input{
     
     /*box-shadow: 0 0 10px #719ECE;*/
     cursor: pointer;
-    width:35%;
-    height: 30%;
+    
     
 }
 
@@ -72,30 +85,15 @@ input:focus{
     
 }
 
-#logout{
-    border-radius: 10px; 
-    
-    font-weight: bold;
-    font-size: 115%;
-    transition:all 0.3s ease;
-    height:8vh;
-    width:17vh;
-    
-}   
-#logout:hover{
-    color: rgba(255, 0, 0, 0.692);
-    font-weight: bold;
-    box-shadow: 0 0 10px #0500fa;
-} 
 
 .todo-list{
-    min-width: 35%;
     
+    margin-right:10vw;
     list-style: none;
 }
 
 .todo{
-    margin:0.75rem;
+    margin:1.5rem;
     background: white;
     color: black;
     font-size: 1rem;
@@ -115,10 +113,10 @@ input:focus{
     padding: 0.6rem;
     cursor: pointer;
     
-    box-shadow: 0 0 10px #d4380d;
+    box-shadow: 0 0 10px #ff6f47;
     
     color: white;
-    background: #ff6f47;
+    background: #ff6f47;/*ff6f47*/
     transition:all 0.3s ease;
 }
 .complete-btn:hover{
@@ -141,27 +139,35 @@ input:focus{
     pointer-events: none;
 }
 .todo-item{
-    width:15vh;
+    width:30vw;
 }
-@media only screen and (max-width: 1000px) { 
+
+@media screen and (max-width: 768px) { 
     #todo-input,.addTask{
-        height:10vh;
+        height:8vw;
+        
+        
     }
+    
     #todo-input{
-        width:40vh;
-        font-size:x-large;
+        width:50vw;
+        font-size:3vw;
     }
     .addTask{
-        width: 15vh;
+        width: 10vw;
+        
     }
     .trash-btn,.complete-btn{
-        padding: 0.7rem;
+        padding: 0.4rem;
     }
     #logout{
-        height:8vh;
-        width:20vh;
+        height:6vw;
+        width:17vw;
+        font-size:2vw;
     }
     .todo-item{
-        width:20vh;
+        width:30vw;
     }
+
+    
 }
