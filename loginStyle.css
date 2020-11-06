@@ -110,9 +110,10 @@ input
          font-size: 1em;
     }
     #login:hover{
-        width:55%;
-
+        width:72%;
+        height: 45%;
     }
+    
     #create-new-account{
         width: 50%;
         height:35%;
