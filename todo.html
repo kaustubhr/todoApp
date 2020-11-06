@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     
     <title>TO-DO app</title>
     <link rel="shortcut icon" href="fav.ico" /> 
@@ -25,14 +25,14 @@
 <body> 
         
         <div class="container h-100">
-            <div class="row h-25">
+            <div class="row h-25 align-items-center">
                 
-                <div class="col-sm-11 d-flex justify-content-center align-items-center">
+                <div class="col-11 d-flex justify-content-center align-items-center">
                     
                     
                     
                         
-                        <input type = "text" id="todo-input" placeholder="Enter New Task Here" autofocus="1" />
+                        <input type = "text" id="todo-input" placeholder="Enter Task Here" autofocus="1" />
                         
                         <button type="button" class="addTask" id="add">
                             <i class="fas fa-plus-square"></i>
@@ -42,15 +42,15 @@
                     
 
                 </div>
-                <div class="col-sm-1 d-flex justify-content-right align-items-center">
-                    <div id="logoutDiv">
-                        <input type="button" width="100%" name="logout" id="logout" value="Log Out" onclick="lOut()"/>
-                    </div>
+                <div class="col-1 d-flex justify-content-center align-items-center">
+                    
+                        <input type="button" name="logout" id="logout" value="Log Out" onclick="lOut()"/>
+                    
                 </div>
             </div>
 
             <div class="row h-75">
-                <div class="col-sm-11 ">
+                <div class="col">
                     <div class="todo-container d-flex justify-content-center align-items-center">
                         <ul class="todo-list">
                             

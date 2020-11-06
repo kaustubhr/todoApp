@@ -1,6 +1,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" /> 
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         <title>TO-DO app</title>
         <link href="loginStyle.css" type="text/css" rel="stylesheet" /> 
         <link rel="shortcut icon" href="fav.ico" />   
@@ -16,29 +18,29 @@
     <body>
         
         
-            <div class="container w-50">
+            <div class="container w-50 justify-content-center">
                 <div class="row h-25 align-items-center">
-                    <div class="col-sm">
-                    <header>TODO - Tasks App</header>
+                    <div class="col-md">
+                    <header class="header-title">TODO - Tasks App</header>
                     </div>
                 </div>
                 <form id="logForm" action="login.js" method="post" ></form>
                 <div class="row h-75">
-                    <div class="col-sm h-100" style="background:linear-gradient(#fdfcfc,#979c9b)">          
+                    <div class="col-md h-100" id="login-container" style="background:linear-gradient(#e5e5e7,#4d4c4c)">          
                         <div class="row h-25">                            
-                            <div class="col-sm d-flex justify-content-center align-items-center">                           
+                            <div class="col-md d-flex justify-content-center align-items-center">                           
                                 <input type="text" name="email" id="email" placeholder="Email address or phone number" autofocus="1" />
                             </div>
                         </div>
 
                         <div class="row h-25">
-                                <div class="col-sm d-flex justify-content-center align-items-center">
+                                <div class="col-md d-flex justify-content-center align-items-center">
                                     <input type="password" name="password" id="password" placeholder="Password" />
                                 </div>
                         </div>
 
                         <div class="row h-25">
-                            <div class="col-sm d-flex justify-content-center align-items-center">
+                            <div class="col-md d-flex justify-content-center align-items-center">
                                     <input type="button" name="login" id="login" value="Sign In" onclick="sub()"/> 
                                                             
                             </div>
@@ -52,9 +54,9 @@
                         <div class="row h-25">
                             
                             
-                            <div class="col-sm d-flex justify-content-center">
+                            <div class="col-md d-flex justify-content-center">
                                 
-                                <button type="button" name="create-new-account" id="create-new-account" onclick="createNewAccount()">Create New Account
+                                <button type="button" name="create-new-account" id="create-new-account" onclick="createNewAccount()">Sign Up
                                 </button>
                             </div>
                         </div>

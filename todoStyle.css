@@ -11,13 +11,16 @@ html{
     
     transition:all 0.3s ease;
     box-shadow: 0 0 10px #0e75e2;
-    height: 30%;
-    width: 5%;
-    background-size: 75%;
+    width:15vh;
+    height:10vh;
+    
+
     
 
 }
-
+#add{
+    background-size: 200%;
+}
     
 
 .addTask:hover{
@@ -25,16 +28,24 @@ html{
     background:white;
     
 }
+#todo-input{
+    width: 50vh;
+    height: 10vh;
+    font-size:5vh;
+}
 
-
-
+.todo-list{
+    margin-right:20vh;
+}
 body{
-    height: 100vh;
+    height:100vh;
     
     
     background:linear-gradient(120deg,#b5e1ec,#3fa4e7);
     background:linear-gradient(120deg,#06ced4,#03a78b);
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
     
 
@@ -63,9 +74,12 @@ input:focus{
 
 #logout{
     border-radius: 10px; 
-    width: 130%;
+    
     font-weight: bold;
-    height: 50%;
+    font-size: 115%;
+    transition:all 0.3s ease;
+    height:8vh;
+    width:17vh;
     
 }   
 #logout:hover{
@@ -92,19 +106,20 @@ input:focus{
 }
 
 .todo li{
-    flex: 1;
+    flex: 0.9;
     
 }
 
 .trash-btn,.complete-btn{
     border:none;
-    padding:0.4rem;
+    padding: 0.6rem;
     cursor: pointer;
     
     box-shadow: 0 0 10px #d4380d;
     
     color: white;
     background: #ff6f47;
+    transition:all 0.3s ease;
 }
 .complete-btn:hover{
     background: white;
@@ -124,4 +139,29 @@ input:focus{
 }
 .fa-trash,.fa-check{
     pointer-events: none;
+}
+.todo-item{
+    width:15vh;
+}
+@media only screen and (max-width: 1000px) { 
+    #todo-input,.addTask{
+        height:10vh;
+    }
+    #todo-input{
+        width:40vh;
+        font-size:x-large;
+    }
+    .addTask{
+        width: 15vh;
+    }
+    .trash-btn,.complete-btn{
+        padding: 0.7rem;
+    }
+    #logout{
+        height:8vh;
+        width:20vh;
+    }
+    .todo-item{
+        width:20vh;
+    }
 }

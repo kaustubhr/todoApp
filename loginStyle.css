@@ -16,12 +16,15 @@ input:focus::-webkit-input-placeholder {
 body
     {
         
-        max-height: 90vh;
-        max-height: 90%;
+        max-height: 95vh;
+        max-height: 95%;
         font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
         background:linear-gradient(120deg,#ff7e5f,#feb47b);
         background:linear-gradient(120deg,#06ced4,#03a78b);
        /* background:linear-gradient(#cc2b5e,#753a88);*/
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        
         
     }
 
@@ -29,58 +32,69 @@ body
 input
     {
                   
-                height: 35%;
-                width: 50%;
+                height: 45%;
+                width: 75%;
                 border-radius: 10px;
                 border: blue;
-                box-shadow: 0 0 10px #719ECE;  
+                box-shadow: 0 0 10px #719ECE; 
+                
                            
     }
 
+#email,#password
+    {
+        font-size:4vh;            
+    }
 
      
 #login
     {
                 background-color:#4a78db;
                 font:bold;
-                font-size:1.5em;
+                font-size:5vh;
                 color:white;
                 vertical-align: center;
                 cursor: pointer;
+
                 
 
     }
 
 #login:hover
     {
-        width: 52%;
-        height: 37%;
+        width: 77%;
+        height: 47%;
     }
+
+    
 
 #create-new-account
     {
-            height: 35%;
-            width: 35%;
+            height: 45%;
+            width: 40%;
             font:bold;
             border-radius: 10px;
             color:white;
             background-color:rgb(4, 167, 26);
             cursor: pointer;
+            font-size: 5vh;
+            box-shadow: 0 0 10px rgb(4, 167, 26); 
+            border:green;
             
             
     }
 
     #create-new-account:hover
     {
-        height: 37%;
-        width:37%
+        height: 47%;
+        width:42%;
         
     }
 
     header{
         text-align: center;
         color: white;
-        font-size:4em;
+        font-size:10vh;
         font-weight: bold;
         
     }
@@ -88,20 +102,28 @@ input
     hr{
         padding-top:2%;
     }
-    /*    
-.container
-    {
-            position: absolute;
-            text-align:center;
-               
-            width: 50%;
-            height: 40%;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin:auto;                
-            border-radius: 10px;
-            background-color:white;
+
+@media (max-width: 700px) { 
+    #login {
+         font-size: 1em;
     }
-*/
+    #create-new-account{
+        width: 50%;
+        height:35%;
+    }
+    input{
+        width:25vh;
+    }
+    #login-container{
+        width:75vh;
+        height: 20vh;
+    }
+    #email,#password
+    {
+        font-size:3vh;            
+    }
+    
+    
+}
+
+
