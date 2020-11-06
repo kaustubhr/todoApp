@@ -105,13 +105,16 @@ input
         padding-top:2%;
     }
 
-@media (max-width: 700px) { 
+@media screen and (max-width: 768px) { 
     #login {
          font-size: 1em;
     }
     #login:hover{
         width:72%;
         height: 45%;
+    }
+    #email{
+        placeholder-text:
     }
     
     #create-new-account{
