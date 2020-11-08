@@ -16,8 +16,8 @@ input:focus::-webkit-input-placeholder {
 body
     {
         
-        max-height: 95vh;
-        max-height: 95%;
+        max-height: 85vh;
+        max-height: 85%;
         font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
         background:linear-gradient(120deg,#ff7e5f,#feb47b);
         background:linear-gradient(120deg,#06ced4,#03a78b);
@@ -85,7 +85,7 @@ input
             
     }
 
-    #create-new-account:hover
+#create-new-account:hover
     {
         height: 47%;
         width:42%;
@@ -93,52 +93,79 @@ input
         
     }
 
-    header{
+header{
         text-align: center;
         color: white;
-        font-size:10vh;
+        font-size:11vh;
         font-weight: bold;
+        padding-top:2vw;
         
     }
-
+#login-container{
+        max-width: 50vw;
+    }
+.container-row{
+    height:70vh;
+}
     
+   
 
 @media screen and (max-width: 768px) { 
     #login {
-         font-size: 1em;
+         font-size: 2.5vh;
+    }
+    #login-container
+    {
+        max-height: 60vh;
+        max-width: 80vw;
     }
     #login:hover{
-        width:72%;
+        width:55%;
         height: 45%;
     }
     
     
     #create-new-account{
-        width: 25vh;
+        width: 25vw;
         height:35%;
-        font-size:1em;
+        font-size:3vh;
     }
     #create-new-account:hover{
         height:37%;
-        width:52%;
+        width:27vh;
     }
     input{
-        width:25vh;
+        width:40vw;
     }
     
-    #login-container{
-        width:75vh;
-        height: 20vh;
-    }
+    
     #email,#password
     {
-        font-size:2.5vh;            
+        font-size:3.5vw;            
     }
 
     header{
-        font-size:9vh;
+        font-size:10vw;
+        
     }
-    
+       
 }
 
 
+
+@media screen and (max-width: 500px){
+#login-container{
+        max-height: 60vh;
+        max-width: 80vw;
+        padding-top: 20vw;
+    }
+header{
+        margin-top:5vw;
+    }
+#create-new-account{
+        width: 25vw;
+        height:35%;
+        font-size:3vw;
+    }
+
+} 
