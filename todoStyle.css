@@ -96,7 +96,7 @@ input:focus{
     margin:1.5rem;
     background: white;
     color: black;
-    font-size: 1rem;
+    
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -106,29 +106,41 @@ input:focus{
 .todo li{
     flex: 0.9;
     
+    font-size: 2.5vw;
+    text-align: center;
+  
+    
+}
+.completed{
+    text-decoration : line-through;
+    
 }
 
 .trash-btn,.complete-btn{
-    border:none;
+    border:2px solid white;
     padding: 0.6rem;
     cursor: pointer;
     
     box-shadow: 0 0 10px #ff6f47;
+    color:white;
+    background: #ff6f47;
     
-    color: white;
-    background: #ff6f47;/*ff6f47*/
     transition:all 0.3s ease;
 }
 .complete-btn:hover{
     background: white;
     /*color: #ff6f47;*/
-    color: rgb(2, 211, 2)
+    color: rgb(2, 211, 2);
+
+   
     
 
 }
 .trash-btn:hover{
-    color:black;
-    background: white;
+    
+
+    color: rgb(0, 0, 0);
+    background: white;/*ff6f47*/
 }
 .complete-btn{
     background: rgb(2, 211, 2);

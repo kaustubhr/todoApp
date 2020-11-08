@@ -46,7 +46,15 @@ function showTodo(){
    let newTodo = document.createElement('li');
    newTodo.classList.add('todo-item');
    
-   newTodo.innerHTML=childSnapshot.val().Task;
+   newTodo.innerHTML=childSnapshot.val().Task;// this is taking in task, add functionality to read isComplete too 
+   if(childSnapshot.val().isComplete == "yes"){
+       console.log("hello boys");
+       todoDiv.classList.add("completed");
+   }
+   //check if just adding class in JS is enough to trigger css class property
+
+
+   
 
    todoDiv.appendChild(newTodo);
    //checked button
@@ -87,7 +95,7 @@ let addTaskIcon = document.querySelector('.addTask');
             var todo = document.getElementById("todo-input").value;
             if(todo==''){return;}
             var userID = firebase.auth().currentUser.uid;
-            firebase.database().ref('users/'+userID).push({Task: todo});  
+            firebase.database().ref('users/'+userID).push({Task: todo,isComplete: "no"});  
             document.getElementById("todo-input").value='';   
             showAddedRow();  
             
@@ -116,10 +124,15 @@ function showAddedRow(){
    const todoDiv = document.createElement('div');
    todoDiv.classList.add("todo");
    
+   
    const newTodo = document.createElement('li');
    newTodo.classList.add('todo-item');
    firebase.database().ref('users/'+userID).once('child_added').then(function(snapshot){
-    newTodo.innerHTML=snapshot.val().Task;       
+    newTodo.innerHTML=snapshot.val().Task;  
+    if(snapshot.val().isComplete == "yes"){
+        console.log("hello boys 2");
+        todoDiv.classList.add("completed");
+    }     
 });
    
    todoDiv.appendChild(newTodo);
@@ -168,4 +181,32 @@ function deleteCheck(e){
         rem.remove();
 
     }
+    if(item.classList[0]=="complete-btn"){
+        let rem = item.parentElement;
+        let itemToUpdate = rem.innerText;
+        console.log(rem);
+        firebase.auth().onAuthStateChanged(function(user) {
+            if(user){
+                var userID = firebase.auth().currentUser.uid;
+                
+                firebase.database().ref('users/'+userID).orderByChild('Task').equalTo(itemToUpdate).
+                on('value',function(snapshot){
+                    
+                    snapshot.forEach(function(child){
+                        console.log(child.val());
+                        
+                        if(rem.classList.contains("completed")==true)
+                        {
+                            child.ref.update({isComplete:"yes"});
+                        }
+                        else{
+                            child.ref.update({isComplete:"no"});
+                        }
+                    });
+                });
+            }});
+        rem.classList.toggle("completed");
+
+    }        
 }
+

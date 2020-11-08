@@ -101,9 +101,7 @@ input
         
     }
 
-    hr{
-        padding-top:2%;
-    }
+    
 
 @media screen and (max-width: 768px) { 
     #login {
@@ -113,12 +111,10 @@ input
         width:72%;
         height: 45%;
     }
-    #email{
-        placeholder-text:
-    }
+    
     
     #create-new-account{
-        width: 50%;
+        width: 25vh;
         height:35%;
         font-size:1em;
     }
