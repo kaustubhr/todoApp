@@ -47,10 +47,7 @@ function showTodo(){
    newTodo.classList.add('todo-item');
    
    newTodo.innerHTML=childSnapshot.val().Task;// this is taking in task, add functionality to read isComplete too 
-   if(childSnapshot.val().isComplete == "yes"){
-       console.log("hello boys");
-       todoDiv.classList.add("completed");
-   }
+   
    //check if just adding class in JS is enough to trigger css class property
 
 
@@ -71,6 +68,13 @@ function showTodo(){
 
    //append this todoDiv to ul todo-list
    todoList.appendChild(todoDiv);
+
+   if(childSnapshot.val().isComplete == "yes"){
+    console.log("hello boys");
+    todoDiv.classList.add("completed");
+    completedButton.classList.add("green-background");
+    completedButton.childNodes[0].className="fas fa-undo";
+}
 
 
    
@@ -127,13 +131,7 @@ function showAddedRow(){
    
    const newTodo = document.createElement('li');
    newTodo.classList.add('todo-item');
-   firebase.database().ref('users/'+userID).once('child_added').then(function(snapshot){
-    newTodo.innerHTML=snapshot.val().Task;  
-    if(snapshot.val().isComplete == "yes"){
-        console.log("hello boys 2");
-        todoDiv.classList.add("completed");
-    }     
-});
+  
    
    todoDiv.appendChild(newTodo);
    //checked button
@@ -141,6 +139,18 @@ function showAddedRow(){
    completedButton.innerHTML = '<i class="fas fa-check"></i>';
    completedButton.classList.add("complete-btn");
    todoDiv.appendChild(completedButton);
+   /*completedButton.classList.add("green-background");*/
+   
+
+   firebase.database().ref('users/'+userID).once('child_added').then(function(snapshot){
+    newTodo.innerHTML=snapshot.val().Task;  
+    if(snapshot.val().isComplete == "yes"){
+        console.log("hello boys 2");
+        todoDiv.classList.add("completed");
+        completedButton.classList.add("green-background");
+        completedButton.childNodes[0].className="fas fa-undo";
+    }     
+});
 
    //trash button
    const trashButton = document.createElement('button');
@@ -154,7 +164,7 @@ function showAddedRow(){
 
 function deleteCheck(e){
     let item = e.target;
-    
+    //console.log(item); item is button class = complete-btn green-background
     //delete todo
     if(item.classList[0]=="trash-btn"){
         let rem = item.parentElement;
@@ -184,7 +194,8 @@ function deleteCheck(e){
     if(item.classList[0]=="complete-btn"){
         let rem = item.parentElement;
         let itemToUpdate = rem.innerText;
-        console.log(rem);
+       console.log(rem);
+        
         firebase.auth().onAuthStateChanged(function(user) {
             if(user){
                 var userID = firebase.auth().currentUser.uid;
@@ -198,9 +209,14 @@ function deleteCheck(e){
                         if(rem.classList.contains("completed")==true)
                         {
                             child.ref.update({isComplete:"yes"});
+                            item.classList.add("green-background");  
+                            item.childNodes[0].className = "fas fa-undo";                                    
+
                         }
                         else{
                             child.ref.update({isComplete:"no"});
+                            item.classList.remove("green-background");
+                            item.childNodes[0].className = "fas fa-check";  
                         }
                     });
                 });

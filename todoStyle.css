@@ -55,8 +55,8 @@ body{
     height:100vh;
     
     
-    background:linear-gradient(120deg,#b5e1ec,#3fa4e7);
-    background:linear-gradient(120deg,#06ced4,#03a78b);
+   
+    background:linear-gradient(#48c6ef,#6f86d6);
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -71,7 +71,7 @@ input{
     outline: 0;
     border: 0.5px white;
     
-    /*box-shadow: 0 0 10px #719ECE;*/
+    
     cursor: pointer;
     
     
@@ -80,8 +80,8 @@ input{
 input:focus{
     outline: 0;
     
-    /*border:0.5px solid blue;*/
-    box-shadow: 0 0 10px #0e75e2;
+    
+    box-shadow: 0 0 10px rgb(2, 211, 2);
     
 }
 
@@ -94,7 +94,7 @@ input:focus{
 
 .todo{
     margin:1.5rem;
-    background: white;
+    background: rgb(255, 255, 255);
     color: black;
     
     display:flex;
@@ -102,69 +102,90 @@ input:focus{
     align-items: center;
     
 }
-
+.todo:hover{
+background-color: rgb(235, 231, 231);
+}
 .todo li{
     flex: 0.9;
     
-    font-size: 2.5vw;
-    text-align: center;
-  
-    
-}
-.completed{
-    text-decoration : line-through;
-    
+    font-size: 2vw;
+    text-align: center;   
 }
 
+.completed{
+    text-decoration : line-through;
+    background: rgb(175, 175, 175);
+
+    
+}
+.completed:hover{
+    background:rgb(175, 175, 175);
+}
 .trash-btn,.complete-btn{
-    border:2px solid white;
+    border:2px solid black;
     padding: 0.6rem;
     cursor: pointer;
+    border-radius: 50%;
     
-    box-shadow: 0 0 10px #ff6f47;
+   
+  
+
     color:white;
-    background: #ff6f47;
+    background:rgb(0, 0, 0);
     
     transition:all 0.3s ease;
 }
-.complete-btn:hover{
-    background: white;
-    /*color: #ff6f47;*/
-    color: rgb(2, 211, 2);
 
-   
-    
-
-}
 .trash-btn:hover{
     
 
-    color: rgb(0, 0, 0);
-    background: white;/*ff6f47*/
+   
+    color:black;
+    background: #ff0000;
+    border:2px solid black;
+    
 }
-.complete-btn{
+
+
+.complete-btn:hover{
     background: rgb(2, 211, 2);
-    color: white;
-    box-shadow: 0 0 10px #0e75e2;
+    color:rgb(0, 0, 0)
 }
-.fa-trash,.fa-check{
+.complete-btn:focus,.trash-btn:focus{
+    outline: none;
+}
+.fa-trash,.fa-check,.fa-undo{
     pointer-events: none;
 }
 .todo-item{
     width:30vw;
 }
 
+.green-background{
+    background: rgb(2, 211, 2);
+    color: white;
+   
+    
+}
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) { 
     #todo-input,.addTask{
-        height:8vw;
+        height:9vw;
         
         
     }
     
     #todo-input{
         width:50vw;
-        font-size:3vw;
+        font-size:4vw;
     }
+  
     .addTask{
         width: 10vw;
         
@@ -173,13 +194,19 @@ input:focus{
         padding: 0.4rem;
     }
     #logout{
-        height:6vw;
-        width:17vw;
-        font-size:2vw;
+        height:9vw;
+        width:20vw;
+        font-size:2.5vw;
     }
     .todo-item{
         width:30vw;
+       
     }
+
+    .todo li{
+        font-size: 3vw;
+    }
+    
 
     
 }
