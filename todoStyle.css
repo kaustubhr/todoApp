@@ -122,12 +122,12 @@ background-color: rgb(235, 231, 231);
     background:rgb(175, 175, 175);
 }
 .trash-btn,.complete-btn{
-    border:2px solid black;
+    
     padding: 0.6rem;
     cursor: pointer;
     border-radius: 50%;
     
-   
+    border:2px solid white;
   
 
     color:white;
@@ -149,7 +149,8 @@ background-color: rgb(235, 231, 231);
 
 .complete-btn:hover{
     background: rgb(2, 211, 2);
-    color:rgb(0, 0, 0)
+    color:rgb(0, 0, 0);
+    border:2px solid black;
 }
 .complete-btn:focus,.trash-btn:focus{
     outline: none;
@@ -164,8 +165,12 @@ background-color: rgb(235, 231, 231);
 .green-background{
     background: rgb(2, 211, 2);
     color: white;
+    border:2px solid black;
    
     
+}
+.green-background:hover{
+    background:white;
 }
 
 
@@ -204,7 +209,7 @@ background-color: rgb(235, 231, 231);
     }
 
     .todo li{
-        font-size: 3vw;
+        font-size: x-large;
     }
     
 

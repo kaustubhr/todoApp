@@ -164,18 +164,25 @@ header{
     input{
         
             width:60vw;
+            
+               
         
     }
 header{
         margin-top:10vw;
     }
+
 #create-new-account{
         width: 25vw;
         height:35%;
-        font-size:2.5vh;
+        font-size:4vw;
     }
     #login {
-        font-size: 2.5vh;
+        font-size: 4vw;
    }
+   #login:hover{
+    width:66vw;
+    height: 45%;
+}
 
 } 
