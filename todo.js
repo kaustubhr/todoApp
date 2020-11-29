@@ -45,8 +45,13 @@ function showTodo(){
    
    let newTodo = document.createElement('li');
    newTodo.classList.add('todo-item');
-   
-   newTodo.innerHTML=childSnapshot.val().Task;// this is taking in task, add functionality to read isComplete too 
+   if(childSnapshot.val().Task == undefined){
+    newTodo.innerHTML=childSnapshot.val().task;
+   }
+   else{
+    newTodo.innerHTML=childSnapshot.val().Task;
+   }
+  // this is taking in task, add functionality to read isComplete too 
    
    //check if just adding class in JS is enough to trigger css class property
 
@@ -182,7 +187,7 @@ function deleteCheck(e){
                         child.ref.remove();
                         
                     });
-                  
+                    
                 });  
                    
             }
