@@ -45,11 +45,9 @@ function showTodo(){
    
    let newTodo = document.createElement('li');
    newTodo.classList.add('todo-item');
-   if(childSnapshot.val().Task == undefined){
+   
     newTodo.innerHTML=childSnapshot.val().task;
-   }
-   else{
-    newTodo.innerHTML=childSnapshot.val().Task;
+   
    }
   // this is taking in task, add functionality to read isComplete too 
    
@@ -104,7 +102,7 @@ let addTaskIcon = document.querySelector('.addTask');
             var todo = document.getElementById("todo-input").value;
             if(todo==''){return;}
             var userID = firebase.auth().currentUser.uid;
-            firebase.database().ref('users/'+userID).push({Task: todo,isComplete: "no"});  
+            firebase.database().ref('users/'+userID).push({task: todo,isComplete: "no"});  
             document.getElementById("todo-input").value='';   
             showAddedRow();  
             
@@ -148,7 +146,7 @@ function showAddedRow(){
    
 
    firebase.database().ref('users/'+userID).once('child_added').then(function(snapshot){
-    newTodo.innerHTML=snapshot.val().Task;  
+    newTodo.innerHTML=snapshot.val().task;  
     if(snapshot.val().isComplete == "yes"){
         console.log("hello boys 2");
         todoDiv.classList.add("completed");
@@ -180,7 +178,7 @@ function deleteCheck(e){
                 
                 var userID = firebase.auth().currentUser.uid;
                 console.log(taskToDel);
-               firebase.database().ref('users/'+userID).orderByChild('Task').equalTo(taskToDel).
+               firebase.database().ref('users/'+userID).orderByChild('task').equalTo(taskToDel).
                 on('value',function(snapshot){
                     console.log(snapshot.val());
                     snapshot.forEach(function(child){
@@ -205,7 +203,7 @@ function deleteCheck(e){
             if(user){
                 var userID = firebase.auth().currentUser.uid;
                 
-                firebase.database().ref('users/'+userID).orderByChild('Task').equalTo(itemToUpdate).
+                firebase.database().ref('users/'+userID).orderByChild('task').equalTo(itemToUpdate).
                 on('value',function(snapshot){
                     
                     snapshot.forEach(function(child){
