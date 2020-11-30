@@ -48,7 +48,7 @@ function showTodo(){
    
     newTodo.innerHTML=childSnapshot.val().task;
    
-   }
+   
   // this is taking in task, add functionality to read isComplete too 
    
    //check if just adding class in JS is enough to trigger css class property
